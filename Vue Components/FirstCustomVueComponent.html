@@ -16,31 +16,20 @@
 
  </div>
 
-<script> 
+<script type="module"> 
 
 // let AppButton = {};
 // let AssignmentList = {};
 // let AssignmentListItem = {};
 
+import AppButton from "./js/components/AppButton.js";
 let app = {
     components: {
-        'app-button': {
-            template: '<button class="bg-gray-200 hover:bg-gray-400 border rounded px-5 py-2 disabled:cursor-not-allowed" :disabled="processing"> <slot/> </button>',
-
-            data() {
-                return {
-                    processing:true
-                };
-            },
-           
-        },
+        'app-button': AppButton
 
     }
 
 };
-
-
-
 
 Vue.createApp(app).mount('#app')
 </script>
