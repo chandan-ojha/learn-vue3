@@ -19,7 +19,7 @@
                  <!--<img :class="{ 'out-of-stock-img': !inStock }" v-bind:src="image">-->
              </div>
              <div class="product-info">
-                 <h1>{{product}}</h1>
+                 <h1>{{ title }}</h1>
                  <!--<a :href="url">Made by Vue Mastery</a>-->
                  <!--<p v-if="inventory > 10">In Stock</p>
                  <p v-else-if="inventory <= 10 && inventory > 0">Almost sold out!</p>
@@ -33,9 +33,9 @@
                      <li v-for="(size, index) in sizes" :key="index">{{ size }}</li>
                  </ul>-->
                  <div
-                         v-for="variant in variants"
+                         v-for="(variant,index) in variants"
                          :key="variant.id"
-                         @mouseover="updateImage(variant.image)"
+                         @mouseover="updateVariant(index)"
                          class="color-circle"
                          :style="{ backgroundColor: variant.color }">
                  </div>
