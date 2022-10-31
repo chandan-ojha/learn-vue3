@@ -3,4 +3,4 @@
 <h5> Practice List </h5>
 
 <p> 1) Laracasts Vue-3 Course  </p>
-<p> 2) Vue Mastery-> Intro to Vue-3  </p>
+<p> 2) Vue Mastery-> Intro to Vue-3 ( Live Link: https://intro-to-vue3.netlify.app )  </p>
