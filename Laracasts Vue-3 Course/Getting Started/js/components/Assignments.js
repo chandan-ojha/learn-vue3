@@ -1,23 +1,31 @@
-import Assignment from "./Assignment.js";
+import AssignmentList from "./AssignmentList.js";
 
 export default {
-    components: { Assignment },
+    components: { AssignmentList },
 
     template: `
-        <section v-show="assignments.length">
-            <h2 class="font-bold mb-2">{{ title }}</h2>
-            <ul>
-               <assignment 
-                    v-for="assignment in assignments"
-                    :key="assignment.id" 
-                    :assignment="assignment"
-                ></assignment>
-            </ul>
-        </section> 
+        <section class="space-y-6">
+            <assignment-list :assignments="filters.inProgress" title="In Progress"></assignment-list>
+            <assignment-list :assignments="filters.completed" title="Completed"></assignment-list>
+        </section>
     `,
 
-    props: {
-        assignments: Array,
-        title: String
+    data() {
+        return {
+            assignments: [
+                { name: 'Finish project', complete: false, id: 1 },
+                { name: 'Read Chapter 4', complete: false, id: 2 },
+                { name: 'Turn in Homework', complete: false, id: 3 },
+            ]
+        }
+    },
+
+    computed: {
+        filters() {
+            return {
+                inProgress: this.assignments.filter(assignment => ! assignment.complete),
+                completed: this.assignments.filter(assignment => assignment.complete)
+            };
+        }
     }
 }
