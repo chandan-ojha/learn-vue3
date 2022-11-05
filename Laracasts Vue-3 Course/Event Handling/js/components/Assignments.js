@@ -18,9 +18,6 @@ export default {
                   @toggle="showCompleted = !showCompleted">
                 </assignment-list> 
              </div>
-             
-            <!--<assignment-create @add="add"></assignment-create> -->
-            
         </section>
     `,
 
