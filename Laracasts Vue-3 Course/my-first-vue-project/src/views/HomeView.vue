@@ -55,7 +55,7 @@ setTimeout(() => {
 
 <!--Form Mixins to Composables-->
 
-<script setup>
+<!--<script setup>
 
 import {useFlash} from "@/composables/useFlash";
 let {flash} = useFlash();
@@ -100,5 +100,19 @@ setTimeout(()=> {
     <p>
       How old are you? <input type="text" v-model="age">
     </p>
+  </main>
+</template>-->
+
+
+<!--Refactor to defineProps and defineEmits-->
+<script setup>
+
+</script>
+
+<template>
+  <main>
+    <form>
+       <textarea style="width: 100%; height: 300px;">Hi,There</textarea>
+    </form>
   </main>
 </template>
