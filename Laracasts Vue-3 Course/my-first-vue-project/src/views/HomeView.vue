@@ -105,7 +105,7 @@ setTimeout(()=> {
 
 
 <!--Refactor to defineProps and defineEmits-->
-<script setup>
+<!--<script setup>
 import TabbableTextarea from "@/components/TabbableTextarea.vue";
 import { ref } from "vue";
 let comment = ref('initial textarea value');
@@ -117,4 +117,16 @@ let comment = ref('initial textarea value');
       <TabbableTextarea v-model="comment" style="width: 100%; height: 300px;" />
     </form>
   </main>
-</template>
+</template>-->
+
+<!--Dependency Injection With Provide and Inject-->
+<!--<script setup>
+  import Quiz from "@/components/Quiz/Quiz.vue";
+</script>
+
+<template>
+  <main>
+     <Quiz :quiz="{name: 'My First Quiz', questions:[] }"/>
+  </main>
+</template>-->
+
