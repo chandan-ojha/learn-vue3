@@ -1,0 +1,32 @@
+{
+  "name": "Smiley",
+  "spots": 5,
+  "members" :
+  [
+    {
+      "name": "Chandan Ojha",
+      "email": "chandan@gmail.com",
+      "status": "Active"
+    },
+    {
+      "name": "Chandan Ojha",
+      "email": "chandan@gmail.com",
+      "status": "Active"
+    },
+    {
+      "name": "Chandan Ojha",
+      "email": "chandan@gmail.com",
+      "status": "Active"
+    },
+    {
+      "name": "Chandan Ojha",
+      "email": "chandan@gmail.com",
+      "status": "Active"
+    },
+    {
+      "name": "Chandan Ojha",
+      "email": "chandan@gmail.com",
+      "status": "Active"
+    }
+  ]
+}
