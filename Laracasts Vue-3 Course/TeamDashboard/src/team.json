@@ -21,11 +21,6 @@
       "name": "Jen Doe",
       "email": "jen@doe.com",
       "status": "Active"
-    },
-    {
-      "name": "Joe Doe",
-      "email": "joe@doe.com",
-      "status": "Active"
     }
   ]
 }
