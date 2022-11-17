@@ -14,9 +14,6 @@
 </template>
 
 <script setup>
-defineProps({
-  name: String,
-  email: String,
-  status: String
-})
+import {useTeamStore} from "@/stores/TeamStore";
+let team = useTeamStore();
 </script>
