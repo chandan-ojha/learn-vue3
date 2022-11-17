@@ -1,31 +1,30 @@
 {
   "name": "Smiley",
   "spots": 5,
-  "members" :
-  [
+  "members": [
     {
-      "name": "Chandan Ojha",
-      "email": "chandan@gmail.com",
+      "name": "John Doe",
+      "email": "john@doe.com",
       "status": "Active"
     },
     {
-      "name": "Chandan Ojha",
-      "email": "chandan@gmail.com",
+      "name": "Sarah Doe",
+      "email": "sarah@doe.com",
       "status": "Active"
     },
     {
-      "name": "Chandan Ojha",
-      "email": "chandan@gmail.com",
+      "name": "Steve Doe",
+      "email": "steve@doe.com",
       "status": "Active"
     },
     {
-      "name": "Chandan Ojha",
-      "email": "chandan@gmail.com",
+      "name": "Jen Doe",
+      "email": "jen@doe.com",
       "status": "Active"
     },
     {
-      "name": "Chandan Ojha",
-      "email": "chandan@gmail.com",
+      "name": "Joe Doe",
+      "email": "joe@doe.com",
       "status": "Active"
     }
   ]
