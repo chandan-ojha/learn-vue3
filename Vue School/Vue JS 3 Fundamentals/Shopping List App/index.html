@@ -8,10 +8,33 @@
 <body>
 <div id="shopping-list">
     <h1>{{header ? header: 'Welcome'}}</h1>
-    <input v-model="header">
+
+    <input v-model="newItem" type="text" placeholder="Add an Item">
+
+    <!--<label>
+        Priority
+
+        <select v-model="newItemPriority">
+            <option value="low">Low</option>
+            <option value="high">High</option>
+        </select>
+    </label>-->
+
+    <label>
+        <input type="checkbox" v-model="newItemHighPriority"> High Priority
+    </label>
+    <br>
+    {{newItem}} {{newItemHighPriority}}
+
+    <label><input type="checkbox" v-model="iceCreamFlavors" value="vanila">Vanila</label>
+    <label><input type="checkbox" v-model="iceCreamFlavors" value="chocolate">Chocolate</label>
+    <label><input type="checkbox" v-model="iceCreamFlavors" value="strawberry">Strawberry</label>
+    <label><input type="checkbox" v-model="iceCreamFlavors" value="cookies and cream">Cookies and Cream</label>
+
     <ul>
         <li v-for="item in items" :key="item.id">{{item.label}}</li>
     </ul>
+
 </div>
 <script src="https://unpkg.com/vue@3"></script>
 <script>
@@ -19,6 +42,9 @@
         data(){
             return{
                 header: "Vue is ready to party!",
+                newItem: '',
+                newItemHighPriority: false,
+                iceCreamFlavors: [],
                 items:[
                     {id:1, label: "10 party hats"},
                     {id:2, label: "2 board games"},
