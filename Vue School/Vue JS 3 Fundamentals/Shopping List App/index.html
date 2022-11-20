@@ -7,9 +7,13 @@
 </head>
 <body>
 <div id="shopping-list">
-    <h1>{{ header ? header: 'Welcome' }}</h1>
+    <div class="header">
+       <h1>{{ header ? header: 'Welcome' }}</h1>
+        <button v-if="editing" @click="doEdit(false)" class="btn btn-cancel">Cancel</button>
+        <button v-else @click="doEdit(true)" class="btn btn-primary">Add Item</button>
+    </div>
 
-    <div class="add-item-form">
+    <div v-if="editing" class="add-item-form">
         <input @keyup.enter="saveItem" v-model="newItem" type="text" placeholder="Add an Item">
         <label>
             <input type="checkbox" v-model="newItemHighPriority"> High Priority
@@ -19,6 +23,7 @@
                 class="btn btn-primary">Save Item
         </button>
     </div>
+    <p v-if="items.length === 0">Nice job! You have bought all your items!</p>
 
     <!--<label>
         Priority
@@ -29,7 +34,7 @@
         </select>
     </label>-->
     <br>
-     {{newItemHighPriority}}
+     <!--{{newItemHighPriority}}-->
 
     <!--<label><input type="checkbox" v-model="iceCreamFlavors" value="vanila">Vanila</label>
     <label><input type="checkbox" v-model="iceCreamFlavors" value="chocolate">Chocolate</label>
@@ -47,6 +52,7 @@
         data(){
             return{
                 header: "Shopping List !",
+                editing: false,
                 newItem: '',
                 newItemHighPriority: false,
                 iceCreamFlavors: [],
@@ -61,7 +67,11 @@
             saveItem(){
                 this.items.push({id:this.items.length + 1, label: this.newItem})
                 this.newItem = ""
-            }
+            },
+           doEdit(editing){
+                this.editing = editing
+               this.newItem = ""
+           }
        }
     })
     .mount('#shopping-list')
