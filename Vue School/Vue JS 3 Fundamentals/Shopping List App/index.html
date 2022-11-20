@@ -10,12 +10,12 @@
     <h1>{{ header ? header: 'Welcome' }}</h1>
 
     <div class="add-item-form">
-        <input @keyup.enter="items.push({id:items.length + 1, label: newItem})" v-model="newItem" type="text" placeholder="Add an Item">
+        <input @keyup.enter="saveItem" v-model="newItem" type="text" placeholder="Add an Item">
         <label>
             <input type="checkbox" v-model="newItemHighPriority"> High Priority
         </label>
         <button
-                @click="items.push({id:items.length + 1, label: newItem})"
+                @click="saveItem"
                 class="btn btn-primary">Save Item
         </button>
     </div>
@@ -56,7 +56,13 @@
                     {id:3, label: "20 cups"},
                 ]
             }
-        }
+        },
+       methods:{
+            saveItem(){
+                this.items.push({id:this.items.length + 1, label: this.newItem})
+                this.newItem = ""
+            }
+       }
     })
     .mount('#shopping-list')
 </script>
