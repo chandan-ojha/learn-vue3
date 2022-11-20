@@ -7,9 +7,18 @@
 </head>
 <body>
 <div id="shopping-list">
-    <h1>{{header ? header: 'Welcome'}}</h1>
+    <h1>{{ header ? header: 'Welcome' }}</h1>
 
-    <input v-model="newItem" type="text" placeholder="Add an Item">
+    <div class="add-item-form">
+        <input @keyup.enter="items.push({id:items.length + 1, label: newItem})" v-model="newItem" type="text" placeholder="Add an Item">
+        <label>
+            <input type="checkbox" v-model="newItemHighPriority"> High Priority
+        </label>
+        <button
+                @click="items.push({id:items.length + 1, label: newItem})"
+                class="btn btn-primary">Save Item
+        </button>
+    </div>
 
     <!--<label>
         Priority
@@ -19,17 +28,13 @@
             <option value="high">High</option>
         </select>
     </label>-->
-
-    <label>
-        <input type="checkbox" v-model="newItemHighPriority"> High Priority
-    </label>
     <br>
-    {{newItem}} {{newItemHighPriority}}
+     {{newItemHighPriority}}
 
-    <label><input type="checkbox" v-model="iceCreamFlavors" value="vanila">Vanila</label>
+    <!--<label><input type="checkbox" v-model="iceCreamFlavors" value="vanila">Vanila</label>
     <label><input type="checkbox" v-model="iceCreamFlavors" value="chocolate">Chocolate</label>
     <label><input type="checkbox" v-model="iceCreamFlavors" value="strawberry">Strawberry</label>
-    <label><input type="checkbox" v-model="iceCreamFlavors" value="cookies and cream">Cookies and Cream</label>
+    <label><input type="checkbox" v-model="iceCreamFlavors" value="cookies and cream">Cookies and Cream</label>-->
 
     <ul>
         <li v-for="item in items" :key="item.id">{{item.label}}</li>
@@ -41,7 +46,7 @@
    const shoppingList =  Vue.createApp({
         data(){
             return{
-                header: "Vue is ready to party!",
+                header: "Shopping List !",
                 newItem: '',
                 newItemHighPriority: false,
                 iceCreamFlavors: [],
