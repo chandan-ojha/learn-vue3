@@ -11,4 +11,6 @@
 <ol>
   <li>Vue.js 3 Fundamentals with the Options API</li>
 </ol>
-
+<ol>
+  <li>Vue Router 4 for Everyone</li>
+</ol>
