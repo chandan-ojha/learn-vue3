@@ -30,6 +30,7 @@ const router = createRouter({
       component: () => import("../views/Panama.vue"),
     },
   ],
+  linkActiveClass: "vue-school-active-link",
 });
 
 export default router;
