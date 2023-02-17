@@ -30,7 +30,8 @@ const router = createRouter({
       component: () => import("../views/Panama.vue"),
     },
     {
-      path: "/destination/:id",
+      path: "/travel-app/:id",
+      name: "destination.show",
       component: () => import("../views/DestinationShow.vue"),
     },
   ],
