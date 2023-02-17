@@ -29,6 +29,10 @@ const router = createRouter({
       name: "panama",
       component: () => import("../views/Panama.vue"),
     },
+    {
+      path: "/destination/:id",
+      component: () => import("../views/DestinationShow.vue"),
+    },
   ],
   linkActiveClass: "vue-school-active-link",
 });
