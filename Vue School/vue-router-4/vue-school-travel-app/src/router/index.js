@@ -12,6 +12,21 @@ const router = createRouter({
     },
 
     {
+      path: "/protected",
+      name: "protected",
+      component: () => import("../views/Protected.vue"),
+      meta: {
+        requiresAuth: true,
+      },
+    },
+
+    {
+      path: "/login",
+      name: "login",
+      component: () => import("../views/Login.vue"),
+    },
+
+    {
       path: "/destination/:id/:slug",
       name: "destination.show",
       component: () => import("../views/DestinationShow.vue"),
@@ -42,12 +57,14 @@ const router = createRouter({
         },
       ],
     },
+
     {
       path: "/:pathMatch(.*)*",
       name: "NotFound",
       component: () => import("@/views/NotFound.vue"),
     },
   ],
+
   scrollBehavior(to, from, savedPosition) {
     return (
       savedPosition ||
@@ -56,6 +73,12 @@ const router = createRouter({
       })
     );
   },
+});
+
+router.beforeEach((to, from) => {
+  if (to.meta.requiresAuth && !window.user) {
+    return { name: "login" };
+  }
 });
 
 export default router;
