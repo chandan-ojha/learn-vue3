@@ -1,7 +1,7 @@
 <template>
   <div id="nav">
-    <router-link id="logo" to="/">Travel App</router-link>
-    <router-link
+    <AppLink id="logo" to="/">Travel App</AppLink>
+    <AppLink
       v-for="destination in destinations"
       :key="destination.id"
       :to="{
@@ -10,8 +10,9 @@
       }"
     >
       {{ destination.name }}
-    </router-link>
-    <router-link :to="{ name: 'protected' }">Dashboard</router-link>
+    </AppLink>
+    <AppLink :to="{ name: 'protected' }">Dashboard</AppLink>
+    <AppLink to="https://vueschool.io">Vue School</AppLink>
   </div>
 </template>
 
